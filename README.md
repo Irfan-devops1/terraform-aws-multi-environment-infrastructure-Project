@@ -273,7 +273,7 @@ This project provided practical experience in:
 
 ## 🔗 Project Repository
 
-**GitHub:** [AWS Multi-Environment Infrastructure Automation Using Terraform](https://github.com/Irfan-devops1/terraform-aws-multi-environment-infrastructure-Project)
+**GitHub Repository:** https://github.com/Irfan-devops1/terraform-aws-multi-environment-infrastructure-Project
 
 **Technical Skills:** AWS | Azure | Terraform | Jenkins | Docker | Kubernetes | Ansible | Helm | GitOps | DevSecOps | Prometheus | Grafana
 
