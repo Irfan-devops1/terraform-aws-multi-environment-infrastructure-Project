@@ -80,11 +80,6 @@ flowchart TB
 | GitHub | Source code repository |
 | Graphviz | Terraform dependency graph visualization |
 
-## AWS Deployment Region
-
-**Region:** Asia Pacific (Mumbai)  
-**Region Code:** `ap-south-1`
-
 ## Project Directory Structure
 
 ```text
@@ -190,15 +185,11 @@ Inspect a specific resource:
 terraform state show aws_instance.my-instance
 ```
 
-### 8. Generate Infrastructure Dependency Graph
-
-```powershell
-terraform graph > graph.dot
-
-### Destroy all infrastructure managed by this configuration
+### 8. Destroy all infrastructure managed by this configuration
 ```powershell
 terraform destroy
 ```
+
 **Important: terraform destroy destroys all resources managed by the current Terraform configuration and state. Review the destruction plan carefully and confirm only when you are sure you want to remove the infrastructure**
 
 ### 9. Generate Infrastructure Dependency Graph
@@ -207,10 +198,7 @@ terraform destroy
 terraform graph > graph.dot
 ```
 
-
 ## Project Screenshots
-
-Screenshots below document the Terraform workflow and AWS infrastructure deployment.
 
 ### Terraform Workflow
 
