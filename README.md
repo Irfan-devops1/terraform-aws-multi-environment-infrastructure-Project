@@ -1,6 +1,10 @@
 # AWS Multi-Environment Infrastructure Automation Using Terraform
 
 <p align="center">
+  <img src="screenshots/terraform-project-structure.png" width="100%">
+</p>
+
+<p align="center">
   <strong>Infrastructure as Code | AWS | Terraform | DevOps</strong>
 </p>
 
@@ -190,6 +194,7 @@ terraform state show aws_instance.my-instance
 
 ```powershell
 terraform graph > graph.dot
+
 ### Destroy all infrastructure managed by this configuration
 ```powershell
 terraform destroy
