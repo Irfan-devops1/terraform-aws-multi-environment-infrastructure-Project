@@ -2,7 +2,7 @@
 
 resource "aws_key_pair" "terra-key-pair" {
   key_name   = "terra-key-pair"
-  public_key = file("C:/Users/ecomadmin/Desktop/terraform/terra-key.pub")
+  public_key = file("C:/Users/irfan/Desktop/terraform/terra-key.pub")   # Path of the Public Key
 
 }
 
