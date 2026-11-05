@@ -32,28 +32,9 @@ Instead of manually provisioning resources through the AWS Management Console, i
 
 ## Architecture Overview
 
-```mermaid
-flowchart TB
-    A["Terraform Infrastructure Automation"]
-
-    A --> M["Reusable Terraform Module: aws_infra"]
-
-    M --> DEV["DEV Environment"]
-    M --> STAGE["STAGE Environment"]
-    M --> PRD["PRD Environment"]
-
-    DEV --> D1["1 EC2 Instance"]
-    STAGE --> S1["2 EC2 Instances"]
-    PRD --> P1["3 EC2 Instances"]
-
-    DEV --> DS["S3 + DynamoDB"]
-    STAGE --> SS["S3 + DynamoDB"]
-    PRD --> PS["S3 + DynamoDB"]
-
-    style DEV fill:#d5f5e3,stroke:#229954
-    style STAGE fill:#fcf3cf,stroke:#d4ac0d
-    style PRD fill:#fadbd8,stroke:#c0392b
-```
+<p align="center">
+  <img src="screenshots/Architecture Overview.png" width="100%">
+</p>
 
 *Conceptual architecture of the multi-environment deployment.*
 
