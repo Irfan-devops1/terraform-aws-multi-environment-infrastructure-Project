@@ -29,28 +29,26 @@ Instead of manually provisioning resources through the AWS Management Console, i
 ## Architecture Overview
 
 ```mermaid
-flowchart TD
-    A["Terraform Root Configuration"]
+flowchart TB
+    A["Terraform Infrastructure Automation"]
 
-    A --> B["DEV Environment"]
-    A --> C["STAGE Environment"]
-    A --> D["PRD Environment"]
+    A --> M["Reusable Terraform Module: aws_infra"]
 
-    B --> E["Reusable AWS Module"]
-    C --> F["Reusable AWS Module"]
-    D --> G["Reusable AWS Module"]
+    M --> DEV["DEV Environment"]
+    M --> STAGE["STAGE Environment"]
+    M --> PRD["PRD Environment"]
 
-    E --> H["EC2"]
-    E --> I["S3"]
-    E --> J["DynamoDB"]
+    DEV --> D1["1 EC2 Instance"]
+    STAGE --> S1["2 EC2 Instances"]
+    PRD --> P1["3 EC2 Instances"]
 
-    F --> K["EC2"]
-    F --> L["S3"]
-    F --> M["DynamoDB"]
+    DEV --> DS["S3 + DynamoDB"]
+    STAGE --> SS["S3 + DynamoDB"]
+    PRD --> PS["S3 + DynamoDB"]
 
-    G --> N["EC2"]
-    G --> O["S3"]
-    G --> P["DynamoDB"]
+    style DEV fill:#d5f5e3,stroke:#229954
+    style STAGE fill:#fcf3cf,stroke:#d4ac0d
+    style PRD fill:#fadbd8,stroke:#c0392b
 ```
 
 *Conceptual architecture of the multi-environment deployment.*
@@ -116,7 +114,6 @@ terraform-aws-multi-environment-infrastructure/
 └── README.md
 ```
 
-*The directory structure and screenshot filenames should reflect the actual files committed to the repository.*
 
 ## Terraform Implementation
 
@@ -188,6 +185,11 @@ Inspect a specific resource:
 ```powershell
 terraform state show aws_instance.my-instance
 ```
+# Destroy all infrastructure managed by this configuration
+```powershell
+terraform destroy
+```
+### Important: terraform destroy destroys all resources managed by the current Terraform configuration and state. Review the destruction plan carefully and confirm only when you are sure you want to remove the infrastructure.
 
 ### 8. Generate Infrastructure Dependency Graph
 
@@ -195,11 +197,6 @@ terraform state show aws_instance.my-instance
 terraform graph > graph.dot
 ```
 
-Convert the dependency graph into a PNG image using Graphviz:
-
-```powershell
-terraform graph | dot -Tpng -o screenshots/terraform-graph.png
-```
 
 ## Project Screenshots
 
