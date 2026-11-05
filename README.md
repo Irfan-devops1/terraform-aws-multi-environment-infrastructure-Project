@@ -185,7 +185,12 @@ Inspect a specific resource:
 ```powershell
 terraform state show aws_instance.my-instance
 ```
-# Destroy all infrastructure managed by this configuration
+
+### 8. Generate Infrastructure Dependency Graph
+
+```powershell
+terraform graph > graph.dot
+### Destroy all infrastructure managed by this configuration
 ```powershell
 terraform destroy
 ```
@@ -274,16 +279,6 @@ During implementation, I worked on resolving practical Terraform and AWS issues,
 - Use meaningful resource names and environment tags.
 - Consider remote state storage and locking for team environments.
 
-## Future Enhancements
-
-- Configure remote Terraform state using Amazon S3.
-- Implement state locking.
-- Integrate Terraform with GitHub Actions.
-- Add automated Terraform validation pipelines.
-- Implement security scanning using Checkov or tfsec.
-- Introduce separate environment-specific variable files.
-- Improve infrastructure monitoring and cost management.
-
 ## Learning Outcomes
 
 This project provided practical experience in:
@@ -300,7 +295,11 @@ This project provided practical experience in:
 ## Author
 
 **Irfan Ahmad**  
-DevOps Engineer
+**DevOps Engineer**
+
+## 🔗 Project Repository
+
+**GitHub:** [AWS Multi-Environment Infrastructure Automation Using Terraform](https://github.com/Irfan-devops1/terraform-aws-multi-environment-infrastructure-Project)
 
 **Technical Skills:** AWS | Azure | Terraform | Jenkins | Docker | Kubernetes | Ansible | Helm | GitOps | DevSecOps | Prometheus | Grafana
 
