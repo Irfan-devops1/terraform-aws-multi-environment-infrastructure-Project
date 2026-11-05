@@ -194,9 +194,9 @@ terraform graph > graph.dot
 ```powershell
 terraform destroy
 ```
-### Important: terraform destroy destroys all resources managed by the current Terraform configuration and state. Review the destruction plan carefully and confirm only when you are sure you want to remove the infrastructure.
+**Important: terraform destroy destroys all resources managed by the current Terraform configuration and state. Review the destruction plan carefully and confirm only when you are sure you want to remove the infrastructure**
 
-### 8. Generate Infrastructure Dependency Graph
+### 9. Generate Infrastructure Dependency Graph
 
 ```powershell
 terraform graph > graph.dot
