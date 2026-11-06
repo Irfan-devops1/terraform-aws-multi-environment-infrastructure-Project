@@ -166,18 +166,18 @@ Inspect a specific resource:
 terraform state show aws_instance.my-instance
 ```
 
-### 8. Destroy all infrastructure managed by this configuration
+### 8. Generate Infrastructure Dependency Graph
+
+```powershell
+terraform graph > graph.dot
+```
+
+### 9. Destroy all infrastructure managed by this configuration
 ```powershell
 terraform destroy
 ```
 
 **Important: terraform destroy destroys all resources managed by the current Terraform configuration and state. Review the destruction plan carefully and confirm only when you are sure you want to remove the infrastructure**
-
-### 9. Generate Infrastructure Dependency Graph
-
-```powershell
-terraform graph > graph.dot
-```
 
 ## Project Screenshots
 
